@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @MapperScan("com.example.wangjian.syslog1.mapper")
 public class SysLog1Application {
-
+    // 我是惠普
     public static void main(String[] args) {
         Factory.setOptions(getOptions());
         System.setProperty("org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH", "true");
