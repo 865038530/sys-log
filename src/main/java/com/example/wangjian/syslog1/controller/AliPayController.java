@@ -6,6 +6,7 @@ import com.alipay.api.AlipayConfig;
 import com.alipay.api.domain.AlipayTradeQueryModel;
 import com.alipay.api.domain.ComplexLabelRule;
 import com.alipay.api.request.AlipayTradeQueryRequest;
+import com.alipay.api.response.AlipayTradePagePayResponse;
 import com.alipay.api.response.AlipayTradeQueryResponse;
 import com.alipay.easysdk.factory.Factory;
 import com.example.wangjian.syslog1.config.AliPayConfig;
@@ -108,6 +109,45 @@ public class AliPayController {
             flag = false;
         }
         return flag;
+    }
+
+    @GetMapping("/paysH5") // &subject=xxx&traceNo=xxx&totalAmount=xxx
+    public void paysH5(AliPayParam aliPay, HttpServletResponse httpResponse) throws Exception {
+
+        AlipayClient alipayClient = new DefaultAlipayClient(gateWay,
+                aliPayConfig.getAppId(),aliPayConfig.getAppPrivateKey(),"json","GBK",
+                aliPayConfig.getAlipayPublicKey(),"RSA2");
+
+
+
+        AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
+
+//异步接收地址，仅支持http/https，公网可访问
+        request.setNotifyUrl(aliPayConfig.getNotifyUrl());
+//同步跳转地址，仅支持http/https
+        request.setReturnUrl("http://yuhangzhifu.cn:8331/log/index");
+        request.setBizContent("{\"out_trade_no\":\"" + IdUtils.getQuantityOrderSerialNo(1)[0] + "\","
+                + "\"total_amount\":\"" + 0.01 + "\","
+                + "\"user_game\":\"" + "aliPay.getUserGame()" + "\","
+                + "\"ids\":\"" + "productId" + "\","
+                + "\"quantity\":\"" + "aliPay.getQuantity()" + "\","
+                + "\"phone\":\"" + "aliPay.getPhone()" + "\","
+                + "\"serviceRange\":\"" + "aliPay.getServiceRange()" + "\","
+                + "\"subject\":\"" + "productFrom.getName()" + "\","
+                + "\"product_code\":\"FAST_INSTANT_TRADE_PAY\"}");
+
+        //AlipayTradePagePayResponse response = alipayClient.pageExecute(request,"POST");
+// 如果需要返回GET请求，请使用
+        AlipayTradePagePayResponse response = alipayClient.pageExecute(request,"GET");
+        String pageRedirectionData = response.getBody();
+        System.out.println(pageRedirectionData);
+
+        if(response.isSuccess()){
+            System.out.println("调用成功");
+            httpResponse.sendRedirect(pageRedirectionData);
+        } else {
+            System.out.println("调用失败");
+        }
     }
 
     @GetMapping("/pays") // &subject=xxx&traceNo=xxx&totalAmount=xxx

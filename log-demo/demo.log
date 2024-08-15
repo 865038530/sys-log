@@ -139,3 +139,76 @@
 2024-08-13 22:40:49.589 [restartedMain] [start] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - tid:- uid:- Tomcat started on port(s): 8331 (http) with context path '/log'
 2024-08-13 22:40:49.594 [restartedMain] [logStarted] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- Started SysLog1Application in 2.695 seconds (JVM running for 3.191)
 2024-08-13 22:40:51.682 [SpringContextShutdownHook] [shutdown] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - tid:- uid:- Shutting down ExecutorService 'taskExecutor'
+2024-08-15 10:05:07.007 [restartedMain] [logStarting] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- Starting SysLog1Application on WINDOWS-0HOM67C with PID 10900 (C:\20240814\git\sys-log\target\classes started by EDY in C:\20240814\git\sys-log)
+2024-08-15 10:05:07.010 [restartedMain] [logStartupProfileInfo] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- The following profiles are active: dev
+2024-08-15 10:05:07.078 [restartedMain] [logTo] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - tid:- uid:- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-15 10:05:07.079 [restartedMain] [logTo] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - tid:- uid:- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-15 10:05:08.383 [restartedMain] [initialize] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - tid:- uid:- Tomcat initialized with port(s): 8331 (http)
+2024-08-15 10:05:08.392 [restartedMain] [log] INFO  org.apache.coyote.http11.Http11NioProtocol - tid:- uid:- Initializing ProtocolHandler ["http-nio-8331"]
+2024-08-15 10:05:08.392 [restartedMain] [log] INFO  org.apache.catalina.core.StandardService - tid:- uid:- Starting service [Tomcat]
+2024-08-15 10:05:08.393 [restartedMain] [log] INFO  org.apache.catalina.core.StandardEngine - tid:- uid:- Starting Servlet engine: [Apache Tomcat/9.0.33]
+2024-08-15 10:05:08.670 [restartedMain] [log] INFO  org.apache.jasper.servlet.TldScanner - tid:- uid:- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-08-15 10:05:08.675 [restartedMain] [log] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/log] - tid:- uid:- Initializing Spring embedded WebApplicationContext
+2024-08-15 10:05:08.675 [restartedMain] [prepareWebApplicationContext] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - tid:- uid:- Root WebApplicationContext: initialization completed in 1596 ms
+2024-08-15 10:05:09.066 [restartedMain] [refresh] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - tid:- uid:- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'wxPayController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'wechat.pay.privateKeyPath' in value "${wechat.pay.privateKeyPath}"
+2024-08-15 10:05:09.068 [restartedMain] [log] INFO  org.apache.catalina.core.StandardService - tid:- uid:- Stopping service [Tomcat]
+2024-08-15 10:05:09.077 [restartedMain] [logMessage] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - tid:- uid:- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-08-15 10:05:09.087 [restartedMain] [reportFailure] ERROR org.springframework.boot.SpringApplication - tid:- uid:- Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'wxPayController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'wechat.pay.privateKeyPath' in value "${wechat.pay.privateKeyPath}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.example.wangjian.syslog1.SysLog1Application.main(SysLog1Application.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'wechat.pay.privateKeyPath' in value "${wechat.pay.privateKeyPath}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:918)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1248)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1227)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:130)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 23 common frames omitted
+2024-08-15 10:06:31.123 [restartedMain] [logStarting] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- Starting SysLog1Application on WINDOWS-0HOM67C with PID 13844 (C:\20240814\git\sys-log\target\classes started by EDY in C:\20240814\git\sys-log)
+2024-08-15 10:06:31.130 [restartedMain] [logStartupProfileInfo] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- The following profiles are active: dev
+2024-08-15 10:06:31.191 [restartedMain] [logTo] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - tid:- uid:- Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-15 10:06:31.192 [restartedMain] [logTo] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - tid:- uid:- For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-15 10:06:32.487 [restartedMain] [initialize] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - tid:- uid:- Tomcat initialized with port(s): 8331 (http)
+2024-08-15 10:06:32.500 [restartedMain] [log] INFO  org.apache.coyote.http11.Http11NioProtocol - tid:- uid:- Initializing ProtocolHandler ["http-nio-8331"]
+2024-08-15 10:06:32.501 [restartedMain] [log] INFO  org.apache.catalina.core.StandardService - tid:- uid:- Starting service [Tomcat]
+2024-08-15 10:06:32.502 [restartedMain] [log] INFO  org.apache.catalina.core.StandardEngine - tid:- uid:- Starting Servlet engine: [Apache Tomcat/9.0.33]
+2024-08-15 10:06:32.777 [restartedMain] [log] INFO  org.apache.jasper.servlet.TldScanner - tid:- uid:- At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2024-08-15 10:06:32.781 [restartedMain] [log] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/log] - tid:- uid:- Initializing Spring embedded WebApplicationContext
+2024-08-15 10:06:32.782 [restartedMain] [prepareWebApplicationContext] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - tid:- uid:- Root WebApplicationContext: initialization completed in 1590 ms
+2024-08-15 10:06:33.160 [restartedMain] [initialize] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - tid:- uid:- Initializing ExecutorService 'taskExecutor'
+2024-08-15 10:06:33.354 [restartedMain] [<init>] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - tid:- uid:- Adding welcome page template: index
+2024-08-15 10:06:33.621 [restartedMain] [startServer] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - tid:- uid:- LiveReload server is running on port 35729
+2024-08-15 10:06:33.648 [restartedMain] [log] INFO  org.apache.coyote.http11.Http11NioProtocol - tid:- uid:- Starting ProtocolHandler ["http-nio-8331"]
+2024-08-15 10:06:33.675 [restartedMain] [start] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - tid:- uid:- Tomcat started on port(s): 8331 (http) with context path '/log'
+2024-08-15 10:06:33.686 [restartedMain] [logStarted] INFO  com.example.wangjian.syslog1.SysLog1Application - tid:- uid:- Started SysLog1Application in 3.148 seconds (JVM running for 4.057)
+2024-08-15 10:06:38.899 [SpringContextShutdownHook] [shutdown] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - tid:- uid:- Shutting down ExecutorService 'taskExecutor'
